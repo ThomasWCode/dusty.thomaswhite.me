@@ -7,6 +7,34 @@
     border-radius: 8px;
 }
 
+.about-section .about-image {
+    flex: 1;
+}
+
+.about-section .about-text {
+    flex: 2;
+}
+
+.gallery-section {
+    text-align: center;
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.gallery-grid img {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
 @media screen and (max-width: 768px) {
     .about-section {
         flex-direction: column;
