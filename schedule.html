@@ -1,0 +1,139 @@
+---
+permalink: /schedule/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dusty - Schedule</title>
+
+    <link rel="preload" href="/CSS/general.css" as="style">
+    <link rel="preload" href="/CSS/schedule.css" as="style">
+
+    <link rel="stylesheet" href="/CSS/general.css"/>
+    <link rel="stylesheet" href="/CSS/schedule.css"/>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loading-text">🐾</div>
+    </div>
+
+    <div class="page-container">
+        <header>
+            <nav class="navbar">
+                <div class="logo-container">
+                    <a href="/" class="logo-link">
+                        <div class="logo">🐾</div>
+                    </a>
+                    <strong><a href="/" style="text-decoration: none; color: white;"><div class="logo logo-text">Dusty</div></a></strong>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/">About</a></li>
+                    <li><a class="current" href="/schedule/">Schedule</a></li>
+                    <li><a href="https://thomaswhite.me/">Thomas White</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="content-wrapper">
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Dusty's Busy Schedule</h1>
+                    <h3>He is very important and very busy. Please do not disturb.</h3>
+                </div>
+            </section>
+
+            <section class="content-section schedule-section">
+                <p class="h3-text schedule-note">Every hour of Dusty's day is accounted for. He does not have free time.</p>
+
+                <div class="schedule-legend">
+                    <span class="legend-item"><span class="dot eating"></span> Eating</span>
+                    <span class="legend-item"><span class="dot roaming"></span> Roaming</span>
+                    <span class="legend-item"><span class="dot sleeping"></span> Sleeping</span>
+                </div>
+
+                <div class="schedule-grid">
+                    <div class="schedule-card roaming"><div class="time">00:00</div><div class="activity">Roaming</div></div>
+                    <div class="schedule-card roaming"><div class="time">01:00</div><div class="activity">Roaming</div></div>
+                    <div class="schedule-card roaming"><div class="time">02:00</div><div class="activity">Roaming</div></div>
+                    <div class="schedule-card roaming"><div class="time">03:00</div><div class="activity">Roaming</div></div>
+                    <div class="schedule-card sleeping"><div class="time">04:00</div><div class="activity">Sleeping</div></div>
+                    <div class="schedule-card sleeping"><div class="time">05:00</div><div class="activity">Sleeping</div></div>
+                    <div class="schedule-card sleeping"><div class="time">06:00</div><div class="activity">Sleeping</div></div>
+                    <div class="schedule-card sleeping"><div class="time">07:00</div><div class="activity">Sleeping</div></div>
+                    <div class="schedule-card eating"><div class="time">08:00</div><div class="activity">Eating</div></div>
+                    <div class="schedule-card sleeping"><div class="time">09:00</div><div class="activity">Sleeping</div></div>
+                    <div class="schedule-card sleeping"><div class="time">10:00</div><div class="activity">Sleeping</div></div>
+                    <div class="schedule-card sleeping"><div class="time">11:00</div><div class="activity">Sleeping</div></div>
+                    <div class="schedule-card roaming"><div class="time">12:00</div><div class="activity">Roaming</div></div>
+                    <div class="schedule-card roaming"><div class="time">13:00</div><div class="activity">Roaming</div></div>
+                    <div class="schedule-card roaming"><div class="time">14:00</div><div class="activity">Roaming</div></div>
+                    <div class="schedule-card roaming"><div class="time">15:00</div><div class="activity">Roaming</div></div>
+                    <div class="schedule-card roaming"><div class="time">16:00</div><div class="activity">Roaming</div></div>
+                    <div class="schedule-card eating"><div class="time">17:00</div><div class="activity">Eating</div></div>
+                    <div class="schedule-card sleeping"><div class="time">18:00</div><div class="activity">Sleeping</div></div>
+                    <div class="schedule-card sleeping"><div class="time">19:00</div><div class="activity">Sleeping</div></div>
+                    <div class="schedule-card sleeping"><div class="time">20:00</div><div class="activity">Sleeping</div></div>
+                    <div class="schedule-card sleeping"><div class="time">21:00</div><div class="activity">Sleeping</div></div>
+                    <div class="schedule-card roaming"><div class="time">22:00</div><div class="activity">Roaming</div></div>
+                    <div class="schedule-card roaming"><div class="time">23:00</div><div class="activity">Roaming</div></div>
+                </div>
+
+                <button class="book-meeting-btn" id="book-meeting-btn">Book a Meeting with Dusty</button>
+            </section>
+
+            <div class="book-meeting-popup" id="book-meeting-popup">
+                <div class="book-meeting-popup-content">
+                    <div class="book-meeting-popup-header">Book a Meeting</div>
+                    <button class="book-meeting-close" id="book-meeting-close">&times;</button>
+                    <div class="book-meeting-popup-body">
+                        <p>Due to the recent extreme business of Dusty's schedule, he is currently unavailable. He is likely to remain this way for the next 15 years.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <a href="https://thomaswhite.me/"><button class="contact-btn"><h2>Thomas White</h2></button></a>
+            <p class="h3-text">&copy; 2026 Thomas White. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script defer src="/JS/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('book-meeting-btn');
+            const popup = document.getElementById('book-meeting-popup');
+            const close = document.getElementById('book-meeting-close');
+
+            if (btn && popup) {
+                btn.addEventListener('click', () => {
+                    popup.classList.add('show');
+                });
+            }
+
+            if (close && popup) {
+                close.addEventListener('click', () => {
+                    popup.classList.remove('show');
+                });
+            }
+
+            if (popup) {
+                popup.addEventListener('click', (e) => {
+                    if (e.target === popup) {
+                        popup.classList.remove('show');
+                    }
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && popup.classList.contains('show')) {
+                        popup.classList.remove('show');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
