@@ -1,0 +1,180 @@
+.schedule-section {
+    text-align: center;
+}
+
+.schedule-note {
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.schedule-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.dot.eating { background-color: #FF9800; }
+.dot.roaming { background-color: #2196F3; }
+.dot.sleeping { background-color: #9C27B0; }
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+.schedule-card {
+    padding: 1rem;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+}
+
+.schedule-card:hover {
+    transform: translateY(-3px);
+}
+
+.schedule-card .time {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-bottom: 0.3rem;
+}
+
+.schedule-card .activity {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.schedule-card.eating { background-color: #FF9800; }
+.schedule-card.roaming { background-color: #2196F3; }
+.schedule-card.sleeping { background-color: #9C27B0; }
+
+.book-meeting-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.book-meeting-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.book-meeting-btn:active {
+    transform: translateY(0);
+}
+
+.book-meeting-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.book-meeting-popup.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.book-meeting-popup-content {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    max-width: 480px;
+    width: 90%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.book-meeting-popup.show .book-meeting-popup-content {
+    transform: translateY(0);
+}
+
+.book-meeting-popup-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.book-meeting-popup-body {
+    padding: 1.5rem;
+}
+
+.book-meeting-popup-body p {
+    margin: 0;
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.book-meeting-close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.book-meeting-close:hover {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .schedule-grid {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    }
+
+    .schedule-legend {
+        gap: 1rem;
+    }
+}

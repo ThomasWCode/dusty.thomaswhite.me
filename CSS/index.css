@@ -1,0 +1,20 @@
+.about-text {
+    flex: 2;
+}
+
+.about-image img {
+    max-width: 250px;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .about-image img {
+        max-width: 200px;
+    }
+}
